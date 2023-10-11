@@ -6,22 +6,23 @@ import java.util.Scanner;
 
 import db.DB;
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
+import model.dao.DepartmentDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-public class Program {
+public class Program2 {
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		SellerDao sellerDao = DaoFactory.createSellerDao();
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+				
+		System.out.println("=== Test 1: department findById ===");
+		Department department = departmentDao.findById(3);
+		System.out.println(department);
 		
-		System.out.println("=== Test 1: seller findById ===");
-		Seller seller = sellerDao.findById(1);
-		System.out.println(seller);
-		
+		/*
 		System.out.println("\n=== Test 2: seller findByDepartament ===");
 		Department dpt = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartament(dpt);
@@ -48,7 +49,7 @@ public class Program {
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("Delete completed! ");
-		
+		*/
 		DB.closeConnection();
 		sc.close();
 		
