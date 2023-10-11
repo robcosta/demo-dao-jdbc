@@ -22,21 +22,15 @@ public class Program2 {
 		Department department = departmentDao.findById(3);
 		System.out.println(department);
 		
-		/*
-		System.out.println("\n=== Test 2: seller findByDepartament ===");
-		Department dpt = new Department(2, null);
-		List<Seller> list = sellerDao.findByDepartament(dpt);
-		list.forEach(System.out::println);
-		
-		System.out.println("\n=== Test 3: seller findAll ===");
-		list = sellerDao.findAll();
+		System.out.println("\n=== Test 2: department findByDepartament ===");
+		List<Department> list = departmentDao.findAll();
 		list.forEach(System.out::println);
 		
 		System.out.println("\n=== Test 4: seller insert ===");
-		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dpt);
-		sellerDao.insert(newSeller);
-		System.out.println("Inserted! New id = " + newSeller.getId());
-		
+		Department newDepartment = new Department(null, "Cleaning");
+		departmentDao.insert(newDepartment);
+		System.out.println("Inserted! New id = " + newDepartment.getId());
+/*		
 		System.out.println("\n=== Test 5: seller update ===");
 		seller = sellerDao.findById(1);
 		seller.setName("Martha Waine");
